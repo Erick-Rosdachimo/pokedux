@@ -1,0 +1,656 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: PokeSolid;
+  src: url("../fonts/PokemonSolid.ttf");
+}
+html {
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  font-family: PokeSolid;
+  color: #076CAE;
+  font-size: 26px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ffffff;
+}
+
+header {
+  margin: 0;
+  width: 100vw;
+  height: 100px;
+  background-image: url("../tl.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 5px solid rgb(114, 114, 114);
+}
+header.container {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+header input {
+  border: none;
+  outline: none;
+  padding: 4px 13px;
+  border-radius: 7px;
+  font-family: PokeSolid;
+  font-size: 15px;
+  width: 300px;
+}
+header button {
+  background-color: #076CAE;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 4px 13px;
+  border-radius: 7px;
+  font-family: PokeSolid;
+  font-size: 15px;
+}
+
+main h1 {
+  -webkit-text-stroke-width: 0;
+  text-align: center;
+  margin-top: 20px;
+}
+main section.box-cards .regiao {
+  position: relative;
+  margin: 0;
+  font-family: PokeSolid;
+  color: #076CAE;
+  font-size: 27px;
+  margin-left: 10%;
+  margin-top: 10px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000000;
+}
+main section.box-cards .regiao::before {
+  content: "";
+  width: 130px;
+  height: 5px;
+  background-color: #076CAE;
+  position: absolute;
+  bottom: -7px;
+  left: -10px;
+}
+main section.box-cards .container-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 23px;
+  padding-top: 30px;
+}
+main::before {
+  background-image: url("../lt.png");
+  background-repeat: repeat;
+  background-size: 37%;
+  background-attachment: fixed;
+  background-position: 0 10%;
+  opacity: 0.4;
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 140vh;
+  z-index: -1;
+}
+
+.poke-img {
+  width: 100px;
+}
+
+.box-img {
+  height: 140px;
+  width: 140px;
+  background-color: rgb(255, 238, 195);
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-footer.oneType {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.box-footer.oneType .box-types {
+  margin-top: 13px;
+  margin-left: 6px;
+}
+.box-footer.oneType .box-types .type-text {
+  text-align: center;
+}
+.box-footer.oneType .pesoAltura {
+  margin-left: 6px;
+}
+
+.box-footer.twoType {
+  display: flex;
+  flex-direction: column;
+}
+.box-footer.twoType .box-types {
+  margin-left: 15px;
+  display: grid;
+  grid-template-columns: 50px auto;
+}
+.box-footer.twoType .box-types .type-text {
+  margin-left: 10px;
+}
+.box-footer.twoType .pesoAltura {
+  text-align: center;
+}
+
+p {
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(29, 29, 29);
+  font-family: PokeSolid;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+.box-card {
+  width: auto;
+  min-width: 250px;
+  max-width: 280px;
+  border-radius: 18px;
+  padding: 20px 8px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.box-card .box-icon {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: end;
+  margin-right: 10px;
+}
+.box-card .box-icon .box-details {
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 1px solid #076CAE;
+}
+.box-card .box-icon .box-details .icon-info {
+  color: #076CAE;
+  transform: scale(1.1);
+}
+.box-card h2 {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(29, 29, 29);
+  font-family: PokeSolid;
+  font-size: 16px;
+  letter-spacing: 3px;
+}
+.box-card.type-normal {
+  background-image: linear-gradient(45deg, #e4e4e4, #E4DDA4, #e4e4e4);
+}
+.box-card.type-normal:hover {
+  transform: scale(1.02);
+}
+.box-card.type-normal::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #e4e4e4, #E4DDA4, #e4e4e4);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-normal:hover::before {
+  opacity: 1;
+}
+.box-card.type-normal h2, .box-card.type-normal div {
+  position: relative;
+}
+.box-card.type-fire {
+  background-image: linear-gradient(45deg, #e61414, #fca420, #e61414);
+}
+.box-card.type-fire:hover {
+  transform: scale(1.02);
+}
+.box-card.type-fire::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #e61414, #fca420, #e61414);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-fire:hover::before {
+  opacity: 1;
+}
+.box-card.type-fire h2, .box-card.type-fire div {
+  position: relative;
+}
+.box-card.type-dragon {
+  background-image: linear-gradient(45deg, #6d549c, #393e9f, #6d549c);
+}
+.box-card.type-dragon:hover {
+  transform: scale(1.02);
+}
+.box-card.type-dragon::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #6d549c, #393e9f, #6d549c);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-dragon:hover::before {
+  opacity: 1;
+}
+.box-card.type-dragon h2, .box-card.type-dragon div {
+  position: relative;
+}
+.box-card.type-bug {
+  background-image: linear-gradient(45deg, #92A018, #76820c, #92A018);
+}
+.box-card.type-bug:hover {
+  transform: scale(1.02);
+}
+.box-card.type-bug::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #92A018, #76820c, #92A018);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-bug:hover::before {
+  opacity: 1;
+}
+.box-card.type-bug h2, .box-card.type-bug div {
+  position: relative;
+}
+.box-card.type-steel {
+  background-image: linear-gradient(45deg, #808080, #c1cdce, #808080);
+}
+.box-card.type-steel:hover {
+  transform: scale(1.02);
+}
+.box-card.type-steel::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #808080, #c1cdce, #808080);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-steel:hover::before {
+  opacity: 1;
+}
+.box-card.type-steel h2, .box-card.type-steel div {
+  position: relative;
+}
+.box-card.type-dark {
+  background-image: linear-gradient(45deg, #261f34, #000000, #261f34);
+}
+.box-card.type-dark:hover {
+  transform: scale(1.02);
+}
+.box-card.type-dark::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #261f34, #000000, #261f34);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-dark:hover::before {
+  opacity: 1;
+}
+.box-card.type-dark h2, .box-card.type-dark div {
+  position: relative;
+}
+.box-card.type-water {
+  background-image: linear-gradient(45deg, #9DE1FD, #00b3ff, #9DE1FD);
+}
+.box-card.type-water:hover {
+  transform: scale(1.02);
+}
+.box-card.type-water::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #9DE1FD, #00b3ff, #9DE1FD);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-water:hover::before {
+  opacity: 1;
+}
+.box-card.type-water h2, .box-card.type-water div {
+  position: relative;
+}
+.box-card.type-psychic {
+  background-image: linear-gradient(45deg, #FDE382, #EA8A8B, #FDE382);
+}
+.box-card.type-psychic:hover {
+  transform: scale(1.02);
+}
+.box-card.type-psychic::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #FDE382, #EA8A8B, #FDE382);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-psychic:hover::before {
+  opacity: 1;
+}
+.box-card.type-psychic h2, .box-card.type-psychic div {
+  position: relative;
+}
+.box-card.type-ghost {
+  background-image: linear-gradient(45deg, #B5ACC4, #323251, #B5ACC4);
+}
+.box-card.type-ghost:hover {
+  transform: scale(1.02);
+}
+.box-card.type-ghost::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #B5ACC4, #323251, #B5ACC4);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-ghost:hover::before {
+  opacity: 1;
+}
+.box-card.type-ghost h2, .box-card.type-ghost div {
+  position: relative;
+}
+.box-card.type-electric {
+  background-image: linear-gradient(45deg, #ffea00, #fff58b, #ffea00);
+}
+.box-card.type-electric:hover {
+  transform: scale(1.02);
+}
+.box-card.type-electric::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #ffea00, #fff58b, #ffea00);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-electric:hover::before {
+  opacity: 1;
+}
+.box-card.type-electric h2, .box-card.type-electric div {
+  position: relative;
+}
+.box-card.type-fairy {
+  background-image: linear-gradient(45deg, #E979FE, #DB6EE5, #E979FE);
+}
+.box-card.type-fairy:hover {
+  transform: scale(1.02);
+}
+.box-card.type-fairy::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #E979FE, #DB6EE5, #E979FE);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-fairy:hover::before {
+  opacity: 1;
+}
+.box-card.type-fairy h2, .box-card.type-fairy div {
+  position: relative;
+}
+.box-card.type-fighting {
+  background-image: linear-gradient(45deg, #c22750, #5e0e1f, #c22750);
+}
+.box-card.type-fighting:hover {
+  transform: scale(1.02);
+}
+.box-card.type-fighting::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #c22750, #5e0e1f, #c22750);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-fighting:hover::before {
+  opacity: 1;
+}
+.box-card.type-fighting h2, .box-card.type-fighting div {
+  position: relative;
+}
+.box-card.type-flying {
+  background-image: linear-gradient(45deg, #b181c1, #778adb, #b181c1);
+}
+.box-card.type-flying:hover {
+  transform: scale(1.02);
+}
+.box-card.type-flying::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #b181c1, #778adb, #b181c1);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-flying:hover::before {
+  opacity: 1;
+}
+.box-card.type-flying h2, .box-card.type-flying div {
+  position: relative;
+}
+.box-card.type-grass {
+  background-image: linear-gradient(45deg, #4ad300, #76e97d, #4ad300);
+}
+.box-card.type-grass:hover {
+  transform: scale(1.02);
+}
+.box-card.type-grass::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #4ad300, #76e97d, #4ad300);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-grass:hover::before {
+  opacity: 1;
+}
+.box-card.type-grass h2, .box-card.type-grass div {
+  position: relative;
+}
+.box-card.type-ice {
+  background-image: linear-gradient(45deg, #9CE2FD, #7DD2FD, #9CE2FD);
+}
+.box-card.type-ice:hover {
+  transform: scale(1.02);
+}
+.box-card.type-ice::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #9CE2FD, #7DD2FD, #9CE2FD);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-ice:hover::before {
+  opacity: 1;
+}
+.box-card.type-ice h2, .box-card.type-ice div {
+  position: relative;
+}
+.box-card.type-ground {
+  background-image: linear-gradient(45deg, #ca8948, #a3672b, #ca8948);
+}
+.box-card.type-ground:hover {
+  transform: scale(1.02);
+}
+.box-card.type-ground::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #ca8948, #a3672b, #ca8948);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-ground:hover::before {
+  opacity: 1;
+}
+.box-card.type-ground h2, .box-card.type-ground div {
+  position: relative;
+}
+.box-card.type-poison {
+  background-image: linear-gradient(45deg, #af00ce, #710085, #af00ce);
+}
+.box-card.type-poison:hover {
+  transform: scale(1.02);
+}
+.box-card.type-poison::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #af00ce, #710085, #af00ce);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-poison:hover::before {
+  opacity: 1;
+}
+.box-card.type-poison h2, .box-card.type-poison div {
+  position: relative;
+}
+.box-card.type-rock {
+  background-image: linear-gradient(45deg, #7F7746, #E6DFA6, #7F7746);
+}
+.box-card.type-rock:hover {
+  transform: scale(1.02);
+}
+.box-card.type-rock::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #7F7746, #E6DFA6, #7F7746);
+  transform: translate(3px, 4px) scale(1.05);
+  filter: blur(8px);
+  opacity: 0;
+}
+.box-card.type-rock:hover::before {
+  opacity: 1;
+}
+.box-card.type-rock h2, .box-card.type-rock div {
+  position: relative;
+}/*# sourceMappingURL=main.css.map */
