@@ -1,16 +1,14 @@
 window.addEventListener('load', () => {
 async function getUser() {
- for (let i = 1; i <= 151; i++) {
+ for (let i = 1; i <= 151; i++) { 
   let url = `https://pokeapi.co/api/v2/pokemon/${i}`
-    let response = await fetch(url);
-    let pokeData = await response.json();
+    let result = await fetch(url);
+    let pokeData = await result.json();
     let typeName1 = pokeData.types[0].type.name;
-
-    console.log(typeName1);
     let typeName2:string;
     let typeHTML:string;
     let typeClass:string;
-
+    
     if(pokeData.types.length == 1){
       typeHTML =
       `<div class="box-types">
@@ -37,15 +35,11 @@ async function getUser() {
       
     </div>`
     }
+    
 
     let container = document.querySelector('.kanto .container-grid') as HTMLElement
     container.innerHTML = container.innerHTML + 
       `<div class="box-card type-${typeName1}">
-      <div class="box-icon">
-        <div class="box-details">
-          <div class="icon-info"></div>
-        </div>
-      </div>
       <h2 class="name">${pokeData.name} | ${pokeData.id}</h2>
       <div class="box-img">
         <img
@@ -63,8 +57,7 @@ async function getUser() {
         </p>
       </div>
     </div>`
-    
-   }
+}
 }
 getUser()
 })

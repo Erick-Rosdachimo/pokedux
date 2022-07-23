@@ -1,7 +1,8 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: ['./src/index.js', './src/onPage.js'],
+  entry: ['./src/index.js'],
   module: {
     rules: [
       {
@@ -11,11 +12,22 @@ module.exports = {
       }
     ]
   },
+
   resolve: {
     extensions: ['.tsx', '.ts', '.js']
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  }
+    path: path.resolve(__dirname)
+  },
+  devServer: {
+    static: __dirname
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'pokedux',
+      filename: 'index.html',
+      template: 'public/index.html'
+    })
+  ]
 }

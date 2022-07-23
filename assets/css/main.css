@@ -59,6 +59,7 @@ header button {
   border-radius: 7px;
   font-family: PokeSolid;
   font-size: 15px;
+  cursor: pointer;
 }
 
 main h1 {
@@ -167,6 +168,31 @@ p {
   letter-spacing: 3px;
 }
 
+.box_search_result {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5725490196);
+  z-index: 10;
+}
+.box_search_result .box-card.searchMode {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%) !important;
+  z-index: 13;
+}
+.box_search_result .show_less {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+}
+
 .box-card {
   width: auto;
   min-width: 250px;
@@ -219,7 +245,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #e4e4e4, #E4DDA4, #e4e4e4);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -244,7 +270,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #e61414, #fca420, #e61414);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -269,7 +295,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #6d549c, #393e9f, #6d549c);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -294,7 +320,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #92A018, #76820c, #92A018);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -319,7 +345,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #808080, #c1cdce, #808080);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -344,7 +370,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #261f34, #000000, #261f34);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -369,7 +395,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #9DE1FD, #00b3ff, #9DE1FD);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -394,7 +420,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #FDE382, #EA8A8B, #FDE382);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -419,7 +445,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #B5ACC4, #323251, #B5ACC4);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -444,7 +470,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #ffea00, #fff58b, #ffea00);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -469,7 +495,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #E979FE, #DB6EE5, #E979FE);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -494,7 +520,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #c22750, #5e0e1f, #c22750);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -519,7 +545,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #b181c1, #778adb, #b181c1);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -544,7 +570,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #4ad300, #76e97d, #4ad300);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -569,7 +595,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #9CE2FD, #7DD2FD, #9CE2FD);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -594,7 +620,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #ca8948, #a3672b, #ca8948);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -619,7 +645,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #af00ce, #710085, #af00ce);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }
@@ -644,7 +670,7 @@ p {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(45deg, #7F7746, #E6DFA6, #7F7746);
-  transform: translate(3px, 4px) scale(1.05);
+  transform: scale(1.05);
   filter: blur(8px);
   opacity: 0;
 }

@@ -63,6 +63,7 @@ header{
     border-radius: 7px;
     font-family: PokeSolid;
     font-size: 15px;
+    cursor: pointer;
   }
   
 }
@@ -186,6 +187,36 @@ p{
   letter-spacing: 3px;
 }
 
+.box_search_result{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #00000092;
+  z-index: 10;
+
+  .box-card.searchMode{
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%) !important;
+    z-index: 13;
+  }
+
+  .show_less{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+  }
+
+}
+
+
+
 .box-card{
   width: auto;
   min-width: 250px;
@@ -238,7 +269,7 @@ p{
       width: 100%;
       height: 100%;
       background-image: linear-gradient(45deg, $color1, $color2, $color1);
-      transform: translate(3px, 4px) scale(1.05) ;
+      transform: scale(1.05) ;
       filter: blur(8px);
       opacity: 0;
     }
@@ -252,11 +283,10 @@ p{
     }
   }
 
+
   &.type-normal{
     @include backgroundLinear( #e4e4e4, #E4DDA4)
   }
-
-
 
   &.type-fire{
     @include backgroundLinear( #e61414, #fca420)

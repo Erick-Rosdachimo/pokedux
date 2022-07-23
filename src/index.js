@@ -13,10 +13,9 @@ window.addEventListener('load', () => {
         return __awaiter(this, void 0, void 0, function* () {
             for (let i = 1; i <= 151; i++) {
                 let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-                let response = yield fetch(url);
-                let pokeData = yield response.json();
+                let result = yield fetch(url);
+                let pokeData = yield result.json();
                 let typeName1 = pokeData.types[0].type.name;
-                console.log(typeName1);
                 let typeName2;
                 let typeHTML;
                 let typeClass;
@@ -50,11 +49,6 @@ window.addEventListener('load', () => {
                 let container = document.querySelector('.kanto .container-grid');
                 container.innerHTML = container.innerHTML +
                     `<div class="box-card type-${typeName1}">
-      <div class="box-icon">
-        <div class="box-details">
-          <div class="icon-info"></div>
-        </div>
-      </div>
       <h2 class="name">${pokeData.name} | ${pokeData.id}</h2>
       <div class="box-img">
         <img
