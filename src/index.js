@@ -35,11 +35,11 @@ window.addEventListener('load', () => {
                     typeHTML =
                         `<div class="box-types">
         <div class="icon ${typeName1}">
-          <img src="assets/icons/${typeName1}.svg" />
+          <img src="./assets/icons/${typeName1}.svg" />
         </div>
         <p class="type-text">${typeName1}</p>
         <div class="icon ${typeName2}">
-          <img src="assets/icons/${typeName2}.svg" />
+          <img src="./assets/icons/${typeName2}.svg" />
         </div>
         
         <p class="type-text">${typeName2}</p>
