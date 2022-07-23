@@ -15,7 +15,7 @@
   "version": "1.0.0",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "webpack --mode development",
     "start": "webpack serve  --hot --mode development"
   },
   "repository": {
