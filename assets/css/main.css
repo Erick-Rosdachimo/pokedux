@@ -72,12 +72,28 @@ header button {
     margin-bottom: 12px;
   }
   header input {
-    width: calc(100% - 80px);
+    width: calc(100vw - 130px);
     font-size: 12px;
+    padding: 4px 8px;
   }
   header button {
     font-size: 12px;
     padding: 4px 8px;
+  }
+}
+@media (max-width: 400px) {
+  header input {
+    width: calc(100vw - 100px);
+    font-size: 12px;
+  }
+  header input::-moz-placeholder {
+    font-size: 10px;
+  }
+  header input:-ms-input-placeholder {
+    font-size: 10px;
+  }
+  header input::placeholder {
+    font-size: 10px;
   }
 }
 main h1 {
@@ -165,7 +181,7 @@ main::before {
 
 p {
   color: rgb(255, 255, 255);
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 0.6px;
   -webkit-text-stroke-color: rgb(29, 29, 29);
   font-family: PokeSolid;
   font-size: 14px;

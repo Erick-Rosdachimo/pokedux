@@ -68,7 +68,7 @@ header{
     justify-content: center;
     padding-left: 10px;
     padding-right: 10px;
-   flex-direction: column;
+    flex-direction: column;
 
     h1{
       line-height: 1;
@@ -76,8 +76,9 @@ header{
     }
 
     input{
-      width: calc(100% - 80px);
+      width: calc(100vw - 130px);
       font-size: 12px;
+      padding: 4px 8px;
     }
 
     button{
@@ -87,6 +88,18 @@ header{
   }
 }
 
+@media(max-width: 400px){
+  header{
+    input{
+      width: calc(100vw - 100px);
+     font-size: 12px;
+    }
+
+    input::placeholder{
+     font-size: 10px;
+   }
+  }
+}
 main{
   h1{
     -webkit-text-stroke-width: 0;
@@ -184,7 +197,7 @@ main{
 
 p{
   color: rgb(255, 255, 255);
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 0.6px;
   -webkit-text-stroke-color: rgb(29, 29, 29);
   font-family: PokeSolid;
   font-size: 14px;
