@@ -20,7 +20,7 @@ h1 {
   font-family: PokeSolid;
   color: #076CAE;
   font-size: 26px;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ffffff;
 }
 
@@ -36,10 +36,8 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 5px solid rgb(114, 114, 114);
-}
-header.container {
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 header input {
   border: none;
@@ -62,6 +60,26 @@ header button {
   cursor: pointer;
 }
 
+@media (max-width: 630px) {
+  header {
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-direction: column;
+  }
+  header h1 {
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  header input {
+    width: calc(100% - 80px);
+    font-size: 12px;
+  }
+  header button {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
 main h1 {
   -webkit-text-stroke-width: 0;
   text-align: center;
@@ -75,8 +93,9 @@ main section.box-cards .regiao {
   font-size: 27px;
   margin-left: 10%;
   margin-top: 10px;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #000000;
+  letter-spacing: 1px;
 }
 main section.box-cards .regiao::before {
   content: "";
@@ -91,6 +110,7 @@ main section.box-cards .container-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 23px;
+  padding: 10px;
   padding-top: 30px;
 }
 main::before {
@@ -109,22 +129,6 @@ main::before {
   width: 100vw;
   height: 140vh;
   z-index: -1;
-}
-
-.poke-img {
-  width: 100px;
-}
-
-.box-img {
-  height: 140px;
-  width: 140px;
-  background-color: rgb(255, 238, 195);
-  border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .box-footer.oneType {
@@ -194,32 +198,28 @@ p {
 }
 
 .box-card {
-  width: auto;
+  width: 100%;
   min-width: 250px;
-  max-width: 280px;
+  max-width: 270px;
   border-radius: 18px;
-  padding: 20px 8px;
+  padding: 19px 8px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
 }
-.box-card .box-icon {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: end;
-  margin-right: 10px;
-}
-.box-card .box-icon .box-details {
-  background-color: #ffffff;
+.box-card .box-img {
+  height: 130px;
+  width: 130px;
+  background-color: rgb(255, 238, 195);
   border-radius: 50%;
-  border: 1px solid #076CAE;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.box-card .box-icon .box-details .icon-info {
-  color: #076CAE;
-  transform: scale(1.1);
+.box-card .box-img .poke-img {
+  width: 100px;
 }
 .box-card h2 {
   text-align: center;
@@ -679,4 +679,80 @@ p {
 }
 .box-card.type-rock h2, .box-card.type-rock div {
   position: relative;
+}
+
+@media (max-width: 750px) {
+  main section.box-cards .container-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-gap: 12px;
+  }
+  .box-card {
+    min-width: 180px;
+    max-width: 230px;
+    padding: 10px 3px;
+  }
+  .box-card .box-footer.oneType {
+    flex-direction: column;
+    align-items: none;
+  }
+  .box-card .box-footer.oneType .box-types {
+    width: 100%;
+    margin-left: 10px;
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: 50px auto;
+  }
+  .box-card .box-footer.oneType .box-types .type-text {
+    margin-left: 10px;
+  }
+  .box-card .box-footer.twoType .box-types {
+    margin-left: 10px;
+  }
+  .box-card div.icon {
+    width: 32px;
+    height: 32px;
+  }
+  .box-card h2 {
+    font-size: 13px;
+  }
+  .box-card p {
+    font-size: 12px;
+  }
+  .box-card .box-img {
+    width: 90px;
+    height: 90px;
+  }
+  .box-card .box-img .poke-img {
+    width: 60px;
+  }
+}
+@media (max-width: 500px) {
+  main section.box-cards .container-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-gap: 9px;
+  }
+  .box-card {
+    min-width: 140px;
+    max-width: 180px;
+    padding: 5px 3px;
+  }
+  .box-card h2 {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  .box-card p {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  .box-card div.icon {
+    width: 25px;
+    height: 25px;
+  }
+  .box-card .box-img {
+    width: 50px;
+    height: 50px;
+  }
+  .box-card .box-img .poke-img {
+    width: 35px;
+  }
 }/*# sourceMappingURL=main.css.map */

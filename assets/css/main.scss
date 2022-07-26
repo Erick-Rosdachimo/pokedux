@@ -22,7 +22,7 @@ h1{
   font-family: PokeSolid;
   color: #076CAE;
   font-size: 26px;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ffffff;
 }
 
@@ -38,11 +38,8 @@ header{
   justify-content: space-between;
   align-items: center;
   border-bottom: 5px solid rgb(114, 114, 114);
-
-  &.container{
-    padding-left: 50px;
-    padding-right: 50px;
-  }  
+  padding-left: 40px;
+  padding-right: 40px;
 
   input{
     border: none;
@@ -53,7 +50,6 @@ header{
     font-size: 15px;
     width: 300px;
   }
-  
   button{
     background-color: #076CAE;
     color: #fff;
@@ -65,7 +61,30 @@ header{
     font-size: 15px;
     cursor: pointer;
   }
-  
+}
+
+@media(max-width:630px){
+  header{
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+   flex-direction: column;
+
+    h1{
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    input{
+      width: calc(100% - 80px);
+      font-size: 12px;
+    }
+
+    button{
+      font-size: 12px;
+      padding: 4px 8px;
+    }
+  }
 }
 
 main{
@@ -84,8 +103,9 @@ main{
       font-size: 27px;
       margin-left: 10%;
       margin-top: 10px;
-      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: #000000;
+      letter-spacing: 1px;
 
       &::before{
         content: '';
@@ -102,7 +122,9 @@ main{
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       grid-gap: 23px;
+      padding: 10px;
       padding-top: 30px;
+
     }
   }
 
@@ -123,23 +145,6 @@ main{
     height: 140vh;
     z-index: -1;
   }
-}
-
-
-.poke-img{
-  width: 100px;
-}
-
-.box-img{
-  height: 140px;
-  width: 140px;
-  background-color: rgb(255, 238, 195);
-  border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .box-footer.oneType{
@@ -172,7 +177,6 @@ main{
       margin-left: 10px;
     }
   }
-
   .pesoAltura{
     text-align: center;
   }
@@ -215,35 +219,31 @@ p{
 
 }
 
-
-
+// CARDS PADRAO
 .box-card{
-  width: auto;
+  width: 100%;
   min-width: 250px;
-  max-width: 280px;
+  max-width: 270px;
   border-radius: 18px;
-  padding: 20px 8px;
+  padding: 19px 8px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
 
-  .box-icon{
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+  .box-img{
+    height: 130px;
+    width: 130px;
+    background-color: rgb(255, 238, 195);
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
-    justify-content: end;
-    margin-right: 10px;
-    .box-details{
-      background-color: #ffffff;
-      border-radius: 50%;
-      border: 1px solid #076CAE;
-      .icon-info{
-       color: #076CAE;
-       transform: scale(1.1);
-     }
-   }
+    justify-content: center;
+    align-items: center;
+
+    .poke-img{
+     width: 100px;
+    }
   }
   h2{
     text-align: center;
@@ -254,9 +254,10 @@ p{
     font-size: 16px;
     letter-spacing: 3px;
   }
-
+  // FUNCAO PARA EDITAR OS CARDS
   @mixin backgroundLinear($color1, $color2) {
     background-image: linear-gradient(45deg, $color1, $color2, $color1);
+
     &:hover{
       transform: scale(1.02);
     }
@@ -282,77 +283,172 @@ p{
       position: relative;;
     }
   }
-
-
-  &.type-normal{
-    @include backgroundLinear( #e4e4e4, #E4DDA4)
-  }
-
-  &.type-fire{
-    @include backgroundLinear( #e61414, #fca420)
-  }
-
-  &.type-dragon{
-    @include backgroundLinear( #6d549c, #393e9f)
-  }
-
-  &.type-bug{
-    @include backgroundLinear( #92A018, #76820c)
-  }
-
-  &.type-steel{
-    @include backgroundLinear( #808080, #c1cdce)
-  }
-
-  &.type-dark{
-    @include backgroundLinear( #261f34, #000000)
-  }
-
-  &.type-water{
-    @include backgroundLinear( #9DE1FD, #00b3ff)
-  }
+  // FUNDO CARDS
+  &{
+    &.type-normal{
+      @include backgroundLinear( #e4e4e4, #E4DDA4)
+    }
   
-  &.type-psychic{
-    @include backgroundLinear( #FDE382, #EA8A8B)
-  }
-
-  &.type-ghost{
-    @include backgroundLinear( #B5ACC4, #323251)
-  }
-
-  &.type-electric{
-    @include backgroundLinear( #ffea00, #fff58b)
-  }
+    &.type-fire{
+      @include backgroundLinear( #e61414, #fca420)
+    }
   
-  &.type-fairy{
-    @include backgroundLinear( #E979FE, #DB6EE5)
-  }
-
-  &.type-fighting{
-    @include backgroundLinear( #c22750, #5e0e1f)
-  }
-
-  &.type-flying{
-    @include backgroundLinear( #b181c1, #778adb)
-  }
+    &.type-dragon{
+      @include backgroundLinear( #6d549c, #393e9f)
+    }
   
-  &.type-grass{
-    @include backgroundLinear( #4ad300, #76e97d)
-  }
-
-  &.type-ice{
-    @include backgroundLinear( #9CE2FD, #7DD2FD)
-  }
-
-  &.type-ground{
-    @include backgroundLinear( #ca8948, #a3672b)
-  }
+    &.type-bug{
+      @include backgroundLinear( #92A018, #76820c)
+    }
   
-  &.type-poison{
-    @include backgroundLinear( #af00ce, #710085)
+    &.type-steel{
+      @include backgroundLinear( #808080, #c1cdce)
+    }
+  
+    &.type-dark{
+      @include backgroundLinear( #261f34, #000000)
+    }
+  
+    &.type-water{
+      @include backgroundLinear( #9DE1FD, #00b3ff)
+    }
+    
+    &.type-psychic{
+      @include backgroundLinear( #FDE382, #EA8A8B)
+    }
+  
+    &.type-ghost{
+      @include backgroundLinear( #B5ACC4, #323251)
+    }
+  
+    &.type-electric{
+      @include backgroundLinear( #ffea00, #fff58b)
+    }
+    
+    &.type-fairy{
+      @include backgroundLinear( #E979FE, #DB6EE5)
+    }
+  
+    &.type-fighting{
+      @include backgroundLinear( #c22750, #5e0e1f)
+    }
+  
+    &.type-flying{
+      @include backgroundLinear( #b181c1, #778adb)
+    }
+    
+    &.type-grass{
+      @include backgroundLinear( #4ad300, #76e97d)
+    }
+  
+    &.type-ice{
+      @include backgroundLinear( #9CE2FD, #7DD2FD)
+    }
+  
+    &.type-ground{
+      @include backgroundLinear( #ca8948, #a3672b)
+    }
+    
+    &.type-poison{
+      @include backgroundLinear( #af00ce, #710085)
+    }
+  
+    &.type-rock{
+      @include backgroundLinear( #7F7746, #E6DFA6)
+    }
+  }
+}
+
+@media(max-width: 750px){
+  main section.box-cards .container-grid{
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-gap: 12px;
   }
 
-  &.type-rock{
-    @include backgroundLinear( #7F7746, #E6DFA6)
+  .box-card{
+    min-width: 180px;
+    max-width: 230px;
+    padding: 10px 3px;
+
+    .box-footer.oneType{
+      flex-direction: column;
+      align-items: none;
+      .box-types{
+        width: 100%;
+        margin-left: 10px;
+        display: grid;
+        justify-content: flex-start;
+        grid-template-columns: 50px auto;
+        .type-text{
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .box-footer.twoType{
+      .box-types{
+        margin-left: 10px;
+      }
+    }
+
+
+    div.icon{
+      width: 32px;
+      height: 32px;
+    }
+
+    h2{
+      font-size: 13px;
+    }
+
+    p{
+      font-size: 12px;
+    }
+
+    .box-img{
+      width: 90px;
+      height: 90px;
+
+      .poke-img{
+        width: 60px;
+      }
+    }
+  }
+}
+
+@media(max-width: 500px){
+  main section.box-cards .container-grid{
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-gap: 9px;
+  }
+
+  .box-card{
+    min-width: 140px;
+    max-width: 180px;
+    padding: 5px 3px;
+
+    h2{
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    p{
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    div.icon{
+      width: 25px;
+      height: 25px;
+    }
+
+    .box-img{
+      width: 50px;
+      height: 50px;
+
+      .poke-img{
+        width: 35px;
+      }
+    }
   }
 }
